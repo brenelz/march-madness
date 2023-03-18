@@ -11,7 +11,7 @@ const teamsToWin = [
   "Miami"
 ];
 
-function getGameScoreStyle(teamScore, opposingScore) {
+function getGameScoreStyle(teamScore: any, opposingScore: number) {
   const teamICareAbout = teamsToWin.find(team => teamScore.name.startsWith(team))
 
   if (teamICareAbout) {
@@ -25,7 +25,7 @@ export default async function Home() {
   return (
     <div style={{ padding: '20px', width: "600px", margin: '0 auto' }}>
       <h1 className={inter.className}>March Madness Picks - Brenley</h1>
-      {gameScores.map((gameScore, index) => (
+      {gameScores.map((gameScore: any, index: number) => (
         <div key={index} style={{ margin: "50px 0" }}>
           <h3 className={`${inter.className}`} style={getGameScoreStyle(gameScore[0], gameScore[1].score)}>{gameScore[0].name} ({gameScore[0].score})</h3>
           <h3 className={inter.className} style={getGameScoreStyle(gameScore[1], gameScore[0].score)}>{gameScore[1].name} ({gameScore[1].score})</h3>

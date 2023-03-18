@@ -27,5 +27,5 @@ export async function getScores() {
 
     const parsedScores = scoresSchema.parse(await response.json());
 
-    return parsedScores.filter(score => score !== null)
+    return parsedScores.filter(score => score !== null) as any;
 }
